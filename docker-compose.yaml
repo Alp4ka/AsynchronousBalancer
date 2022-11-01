@@ -1,0 +1,27 @@
+version: "3.9"
+
+services:
+  balancer:
+    build: ./balancer/
+    ports:
+      - "8000:8000"
+  worker1:
+    build: ./worker/
+    ports:
+      - "8001:8000"
+  worker2:
+    build: ./worker/
+    ports:
+      - "8002:8000"
+  worker3:
+    build: ./worker/
+    ports:
+      - "8003:8000"
+  worker4:
+    build: ./worker/
+    ports:
+      - "8004:8000"
+  worker5:
+    build: ./worker/
+    ports:
+      - "8005:8000"

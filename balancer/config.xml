@@ -1,0 +1,19 @@
+<balancer>
+    <workers>
+        <worker>
+            <address>worker1:8000</address>
+        </worker>
+        <worker>
+            <address>worker2:8000</address>
+        </worker>
+        <worker>
+            <address>worker3:8000</address>
+        </worker>
+        <worker>
+            <address>worker4:8000</address>
+        </worker>
+        <worker>
+            <address>worker5:8000</address>
+        </worker>
+    </workers>
+</balancer>
