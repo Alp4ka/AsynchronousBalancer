@@ -5,23 +5,53 @@ from pydantic.validators import IntEnum
 
 
 class WorkerStatus(IntEnum):
-    IDLE = 0
-    BUSY = 1
-    DEAD = 2
+    """
+    Статус воркера.
+    """
+    IDLE = 0,  # IDLE
+    BUSY = 1,  # BUSY
+    DEAD = 2  # DEAD
 
 
 class TaskRequest(BaseModel):
+    """
+    Запрос на расчет.
+
+    Attributes
+    ----------
+    payload: str
+        Какая-то информация, нужная для расчета
+    """
     payload: str
 
 
 class TaskStatus(IntEnum):
-    CREATED = 0
-    IN_PROGRESS = 1
-    DONE = 2
-    ERROR = 3
+    """
+    Статус таски.
+    """
+    CREATED = 0,  # CREATED
+    IN_PROGRESS = 1,  # IN_PROGRESS
+    DONE = 2,  # DONE
+    ERROR = 3  # ERROR
 
 
 class Task(BaseModel):
+    """
+    Запрос на расчет.
+
+    Attributes
+    ----------
+    uuid: UUID4
+        Идентификатор таски
+    date: Optional[datetime.datetime]
+        Дата решения таски
+    result: Optional[float]
+        Результат решения таски
+    payload: str
+        Информация для решения таски
+    status: TaskStatus
+        Статус таски
+    """
     uuid: UUID4
     date: Optional[datetime.datetime]
     result: Optional[float]

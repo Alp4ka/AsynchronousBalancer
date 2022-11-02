@@ -27,9 +27,20 @@ class Worker:
 
     @property
     def tasks(self):
+        """
+        Получить таски
+
+        :return: Dict[str, Task]
+        """
         return self._tasks
 
     async def compute(self, task_request: TaskRequest) -> Task:
+        """
+        Запускает расчет запроса. Возвращает посчитанную таску.
+
+        :param task_request: TaskRequest, запрос на расчет.
+        :return: Task
+        """
         self._active_connection_num += 1
         logger.info(f"Active connections: {self._active_connection_num}.")
 
@@ -49,12 +60,23 @@ class Worker:
 
     @property
     def status(self):
+        """
+        Статус воркера. Вернет BUSY, если есть подключения. IDLE - иначе.
+
+        :return: WorkerStatus
+        """
         if self._active_connection_num > 0:
             return WorkerStatus.BUSY
         else:
             return WorkerStatus.IDLE
 
     async def periodically_log_connections(self, period: int):
+        """
+        Логгирует Количество подключений каждые period секунд.
+
+        :param period: int, промежутки между логами в секундах.
+        :return: None
+        """
         logger.info(f"[Scheduled Message] Periodically logging connections every {period} seconds.")
         while True:
             await asyncio.sleep(period)

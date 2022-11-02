@@ -68,8 +68,10 @@ class Worker:
                     if response.status == 200:
                         response_json = await response.json()
                         result = Task(**response_json)
-        except ClientConnectionError: pass  # noqa
-        except asyncio.TimeoutError: pass  # noqa
+        except ClientConnectionError:
+            pass  # noqa
+        except asyncio.TimeoutError:
+            pass  # noqa
         finally:
             self.number_of_connections -= 1
             return result

@@ -45,4 +45,3 @@ class WorkerView:
 
 
 app.include_router(router)
-

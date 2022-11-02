@@ -22,6 +22,6 @@ async def main():
         views.get_worker().periodically_log_connections(10)
     )
 
+
 if __name__ == "__main__":
     asyncio.run(main())
-

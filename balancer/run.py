@@ -5,7 +5,6 @@ from config import BalancerConfig
 import views
 import argparse
 
-
 if __name__ == "__main__":
     arg_parser = argparse.ArgumentParser()
     arg_parser.add_argument('--host', type=str, required=False, default='0.0.0.0')
