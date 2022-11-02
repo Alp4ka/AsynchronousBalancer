@@ -10,6 +10,7 @@ from worker import Worker
 
 app = FastAPI()
 router = InferringRouter()
+
 worker = Worker()
 
 
@@ -44,3 +45,4 @@ class WorkerView:
 
 
 app.include_router(router)
+

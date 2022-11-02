@@ -1,3 +1,4 @@
+import asyncio
 import logging
 import uuid
 import sys
@@ -52,3 +53,9 @@ class Worker:
             return WorkerStatus.BUSY
         else:
             return WorkerStatus.IDLE
+
+    async def periodically_log_connections(self, period: int):
+        logger.info(f"[Scheduled Message] Periodically logging connections every {period} seconds.")
+        while True:
+            await asyncio.sleep(period)
+            logger.info(f"[Scheduled Message] Active connections: {self._active_connection_num}.")
