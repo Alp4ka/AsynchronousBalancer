@@ -1,6 +1,9 @@
 # AsynchronousBalancer
 Asynchronous balancer on Python made as a part of test task for [ERASED] company internship.
 
+# Swagger
+localhost:8000/docs
+
 # Запуск
 Запустить Balancer и 5 Worker'ов. (Балансер на порту 8000, Воркеры на 8001, 8002...)
 
